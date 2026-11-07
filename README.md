@@ -95,13 +95,3 @@ VIET_SPORT/
 ├── FUNCTION/                      # Các thủ tục lưu trữ nghiệp vụ
 └── TRANH_CHAP/                    # Kịch bản kiểm thử tình huống chạy đồng thời
 ```
-
----
-
-## 5. Danh sách thành viên thực hiện
-
-1. **Đỗ Phước Vinh** - 23120405, Nhóm trưởng
-2. **Nguyễn Hoàng Danh** - 23120028
-3. **Phạm Ngọc Thanh** - 23120087
-4. **Đào Đức Thịnh** - 23120361
-5. **Thạch Ý** - 23120411
