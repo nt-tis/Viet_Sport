@@ -1,7 +1,7 @@
-# Hệ Thống Quản Lý Chuỗi Trung Tâm Thể Thao VietSport
+# Hệ thống quản lý sân thể thao VietSport
 
 > [!NOTE]
-> Ghi chú: Dự án bắt đầu từ một đồ án nhóm nhưng đã được mình cải tiến và tối ưu hoá thêm bằng cách refactor luồng nghiệp vụ cũng như một số chức năng trong app nhằm tạo một hệ thống hoạt động trơn tru và chính xác nhất.
+> Dự án bắt đầu từ một đồ án nhóm nhưng đã được mình cải tiến và tối ưu hoá thêm bằng cách refactor luồng nghiệp vụ cũng như một số chức năng trong app nhằm tạo một hệ thống hoạt động trơn tru và chính xác nhất.
 
 ## 1. Giới thiệu tổng quan
 
