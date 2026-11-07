@@ -51,7 +51,7 @@ Data Source=.;Initial Catalog=VIET_SPORT;Integrated Security=True;Encrypt=False;
 
 ---
 
-## 6. Danh sách tài khoản thử nghiệm
+## 3. Danh sách tài khoản thử nghiệm
 
 Dưới đây là các tài khoản mẫu đã được băm sẵn trong cơ sở dữ liệu để tiện kiểm tra:
 
@@ -74,7 +74,7 @@ Mật khẩu của các nhân viên khác trong hệ thống tuân theo quy tắ
 
 ---
 
-## 3. Cấu trúc thư mục dự án
+## 4. Cấu trúc thư mục dự án
 
 ```text
 VIET_SPORT/
@@ -98,7 +98,7 @@ VIET_SPORT/
 
 ---
 
-## 4. Danh sách thành viên thực hiện
+## 5. Danh sách thành viên thực hiện
 
 1. **Đỗ Phước Vinh** - 23120405, Nhóm trưởng
 2. **Nguyễn Hoàng Danh** - 23120028
