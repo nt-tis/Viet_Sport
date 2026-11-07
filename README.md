@@ -78,20 +78,20 @@ Mật khẩu của các nhân viên khác trong hệ thống tuân theo quy tắ
 
 ```text
 VIET_SPORT/
-├── VIET_SPORT.sln                 # File giải pháp Visual Studio
-├── .gitignore                     # Cấu hình bỏ qua các file tạm khi đẩy code
-├── README.md                      # Tài liệu hướng dẫn sử dụng dự án
+├── VIET_SPORT.sln                 
+├── .gitignore                     
+├── README.md                      
 │
-├── LOGIN_C/                       # Đăng ký và đăng nhập cho khách hàng
-├── LOGIN_E/                       # Đăng nhập phân luồng cho nhân viên
-├── CUSTOMER/                      # Chức năng tra cứu sân, đặt sân và ví tiền của khách
-├── RECEPTIONIST_COURT/            # Chức năng của nhân viên lễ tân
-├── CASHIER/                       # Chức năng lập hóa đơn của thu ngân
-├── MANAGER/                       # Chức năng quản lý nhân sự, duyệt đơn và khuyến mãi
-├── TECHNICIAN/                    # Chức năng bảo trì của kỹ thuật viên
-├── ADMIN_Folder/                  # Chức năng quản trị hệ thống
+├── LOGIN_C/                       
+├── LOGIN_E/                       
+├── CUSTOMER/                      
+├── RECEPTIONIST_COURT/            
+├── CASHIER/                       
+├── MANAGER/                       
+├── TECHNICIAN/                    
+├── ADMIN_Folder/                  
 │
-├── DATABASE/                      # Kịch bản tạo bảng, nạp dữ liệu và sửa lỗi tranh chấp
+├── DATABASE/                      
 ├── FUNCTION/                      # Các thủ tục lưu trữ nghiệp vụ
 └── TRANH_CHAP/                    # Kịch bản kiểm thử tình huống chạy đồng thời
 ```
