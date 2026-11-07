@@ -1,0 +1,53 @@
+## ====================================================================
+## Visual Studio & .NET .gitignore
+## ====================================================================
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio files
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.tmp
+*.temp
+*.cache
+*.opendb
+*.dbmdl
+
+# Resharper & JetBrains
+_ReSharper*/
+*.ReSharper.user
+.idea/
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Python cache (for database generation scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Temporary test and verification files
+verify_*.*
+*scratch*
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Docx files
+*.docx

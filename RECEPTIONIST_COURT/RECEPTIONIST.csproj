@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8A669C4-E51C-830C-77A8-CC2AE9B2CDA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RECEPTIONIST</RootNamespace>
+    <AssemblyName>RECEPTIONIST</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="Receiptionist_CancellationForm.Designer.cs">
+      <DependentUpon>Receiptionist_CancellationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receiptionist_Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receiptionist_Mainform.Designer.cs">
+      <DependentUpon>Receiptionist_Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receiptionist_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receiptionist_Service.Designer.cs">
+      <DependentUpon>Receiptionist_Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist_court.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist_court.Designer.cs">
+      <DependentUpon>Receptionist_court.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist_ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist_Payroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist_LeaveApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Receiptionist_Mainform.resx">
+      <DependentUpon>Receiptionist_Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist_court.resx">
+      <DependentUpon>Receptionist_court.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <!-- Added Receptionist booking form files (project root) -->
+    <Compile Include="Receiptionist_BookingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receiptionist_BookingForm.Designer.cs">
+      <DependentUpon>Receiptionist_BookingForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Receiptionist_BookingForm.resx">
+      <DependentUpon>Receiptionist_BookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <!-- Added Receptionist cancellation form files (project root) -->
+    <Compile Include="Receiptionist_CancellationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Receiptionist_CancellationForm.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Receiptionist_CancellationForm.Designer.cs</LastGenOutput>
+      <DependentUpon>Receiptionist_CancellationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basketball-court1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
