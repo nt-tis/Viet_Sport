@@ -1,11 +1,5 @@
 # Hệ Thống Quản Lý Chuỗi Trung Tâm Thể Thao VietSport
 
-Đồ án môn học: Hệ Quản Trị Cơ Sở Dữ Liệu  
-Trường Đại học Khoa học Tự nhiên - ĐHQG TP.HCM  
-Giảng viên hướng dẫn: ThS. Tiết Gia Hồng  
-Nhóm thực hiện: Nhóm 18  
-
----
 
 ## 1. Giới thiệu tổng quan
 
@@ -21,65 +15,7 @@ Hệ thống hỗ trợ quản lý các môn thể thao phổ biến:
 
 ---
 
-## 2. Các vai trò và chức năng chính
-
-Hệ thống phân chia quyền hạn rõ ràng cho 6 nhóm người dùng:
-
-### Khách hàng
-- Đăng ký tài khoản với yêu cầu mật khẩu an toàn: tối thiểu 8 ký tự, có ít nhất 1 chữ in hoa và 1 chữ số.
-- Tra cứu danh sách sân còn trống theo ngày và chi nhánh.
-- Đặt sân trực tuyến, chọn thuê kèm dụng cụ như bóng hoặc vợt.
-- Quản lý số dư và thanh toán tiền thuê sân qua ví điện tử.
-- Xem lịch sử các đơn đã đặt, đổi sang sân khác hoặc hủy sân có tính phí phạt tự động.
-
-### Lễ tân
-- Tra cứu danh sách các đơn đặt sân trong ngày.
-- Làm thủ tục nhận sân cho khách khi đến quầy và bàn giao dụng cụ.
-- Đặt sân trực tiếp tại quầy cho khách vãng lai.
-- Hoàn tất đơn đặt khi khách chơi xong, kiểm kê trả dụng cụ về kho và in phiếu hoàn tất.
-
-### Thu ngân
-- Lập hóa đơn và xác nhận thanh toán tiền sân cũng như dịch vụ đi kèm.
-- Áp dụng các mã giảm giá hợp lệ cho đơn đặt.
-- Thu phí phạt đối với các đơn hủy đặt sân.
-
-### Quản lý chi nhánh
-- Quản lý thông tin và phân ca làm việc cho nhân viên trong chi nhánh mình phụ trách.
-- Quản lý chi nhánh nào chỉ có quyền xem dữ liệu và duyệt đơn nghỉ phép của nhân viên tại chi nhánh đó.
-- Điều chỉnh giá thuê sân, tạo chương trình khuyến mãi và xem doanh thu chi nhánh.
-
-### Kỹ thuật viên
-- Cập nhật tình trạng sân khi cần bảo trì hoặc khi đã sửa chữa xong để tiếp tục đón khách.
-- Ghi nhận báo cáo sự cố hư hỏng sân bãi và trang thiết bị.
-- Xem lịch trực và nộp đơn xin nghỉ ca trực.
-
-### Quản trị viên
-- Quản lý danh mục các chi nhánh, các loại sân thi đấu và dịch vụ dụng cụ trên toàn chuỗi.
-- Cấp tài khoản và phân quyền cho nhân viên các bộ phận.
-
----
-
-## 3. Xử lý tranh chấp dữ liệu khi nhiều người dùng đồng thời
-
-Hệ thống xử lý các tình huống xung đột dữ liệu trên SQL Server bằng các thủ tục lưu trữ kết hợp mức khóa phù hợp:
-
-- **Mất cập nhật số lượng dụng cụ và số dư ví**: Khi nhiều khách cùng thuê những món đồ cuối cùng hoặc nạp trừ tiền ví liên tiếp, hệ thống dùng khóa cập nhật ngay từ bước kiểm tra đến khi hoàn tất giao dịch để số tồn kho và số dư không bao giờ bị trừ âm hay sai lệch.
-- **Tránh đặt trùng sân**: Khi hai khách cùng bấm đặt một sân trong cùng khung giờ, hệ thống dùng khóa phạm vi trên bảng đặt sân để người gửi trước đặt thành công, người gửi sau nhận thông báo sân đã có người giữ chỗ.
-- **Giới hạn số sân trong ngày**: Mỗi khách chỉ được đặt tối đa 2 sân trong một ngày. Hệ thống khóa dòng dữ liệu khách hàng khi đếm số đơn hiện có để tránh việc mở nhiều thiết bị đặt vượt quá hạn mức.
-- **Tranh chấp giữa thu ngân và tự động hủy đơn**: Đơn đặt quá 30 phút chưa trả tiền sẽ bị hệ thống tự động hủy. Khi thu ngân đang thao tác lập hóa đơn cho đơn này, hệ thống khóa phiếu đặt để ưu tiên giao dịch của thu ngân thành công trước, tránh bị hủy ngang.
-- **Ngăn ngừa khóa chết**: Các giao dịch cập nhật nhiều tài nguyên luôn tuân theo thứ tự sắp xếp cố định theo mã khóa chính. Phía ứng dụng có sẵn cơ chế bắt lỗi và thử lại tự động để người dùng không gặp gián đoạn.
-
----
-
-## 4. Bảo mật mật khẩu
-
-- Tất cả mật khẩu của nhân viên và khách hàng lưu trong cơ sở dữ liệu đều được chuyển thành chuỗi băm SHA-256. Hệ thống không lưu mật khẩu thô.
-- Khi người dùng đăng nhập, hệ thống sẽ băm mật khẩu vừa nhập rồi so sánh với chuỗi băm trong bảng dữ liệu.
-- Các chức năng đăng ký tài khoản mới và đổi mật khẩu ở tất cả các vai trò đều bắt buộc đáp ứng quy định: độ dài từ 8 ký tự trở lên, chứa ít nhất một chữ hoa và ít nhất một chữ số.
-
----
-
-## 5. Hướng dẫn cài đặt và chạy ứng dụng
+## 2. Hướng dẫn cài đặt và chạy ứng dụng
 
 ### Yêu cầu
 - Máy tính chạy Windows 10 hoặc Windows 11.
@@ -136,7 +72,7 @@ Mật khẩu của các nhân viên khác trong hệ thống tuân theo quy tắ
 
 ---
 
-## 7. Cấu trúc thư mục dự án
+## 3. Cấu trúc thư mục dự án
 
 ```text
 VIET_SPORT/
@@ -160,7 +96,7 @@ VIET_SPORT/
 
 ---
 
-## 8. Danh sách thành viên thực hiện
+## 4. Danh sách thành viên thực hiện
 
 1. **Đỗ Phước Vinh** - 23120405, Nhóm trưởng
 2. **Nguyễn Hoàng Danh** - 23120028
